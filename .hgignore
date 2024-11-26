@@ -1,0 +1,5 @@
+syntax: glob
+dev.ini
+build/
+bin/
+*.sublime-workspace

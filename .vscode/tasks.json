@@ -1,0 +1,173 @@
+{
+  "version": "2.0.0",
+  "presentation": {
+    "reveal": "always",
+    "revealProblems": "onProblem"
+  },
+  "type": "shell",
+  "linux": {
+    "options": {
+      "cwd": "build/linux/gmake/",
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}/build/linux/gmake/"
+        ]
+      }
+    }
+  },
+  "osx": {
+    "options": {
+      "cwd": "build/mac/gmake/",
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}/build/mac/gmake/"
+        ]
+      }
+    }
+  },
+  "windows": {
+    "options": {
+      "cwd": "build/windows/gmake/",
+      "shell": {
+        "executable": "cmd.exe",
+        "args": [
+          "/d",
+          "/c"
+        ]
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}/build/windows/gmake/"
+        ]
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Refresh Roidz project files",
+      "group": "build",
+      "type": "shell",
+      "command": "./premake4",
+      "windows": {
+        "command": "premake4.exe gmake"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/build/"
+      }
+    },
+    {
+      "label": "Build Roidz (debug, profile, release)",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Build Roidz (debug)",
+        "Build Roidz (profile)",
+        "Build Roidz (release)"
+      ],
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Build Roidz (debug)",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "linux": {
+        "command": "make -j config=debug64",
+      },
+      "osx": {
+        "command": "make -j config=debuguniv64"
+      },
+      "windows": {
+        "command": "mingw32-make.exe -j config=debug64"
+      }
+    },
+    {
+      "label": "Build Roidz (profile)",
+      "group": "build",
+      "type": "shell",
+      "linux": {
+        "command": "make -j config=profile64"
+      },
+      "osx": {
+        "command": "make -j config=profileuniv64"
+      },
+      "windows": {
+        "command": "mingw32-make.exe -j config=profile64"
+      }
+    },
+    {
+      "label": "Build Roidz (release)",
+      "group": "build",
+      "type": "shell",
+      "linux": {
+        "command": "make -j config=release64"
+      },
+      "osx": {
+        "command": "make -j config=releaseuniv64"
+      },
+      "windows": {
+        "command": "mingw32-make.exe -j config=release64"
+      }
+    },
+    {
+      "label": "Run Roidz (debug)",
+      "dependsOn": [
+        "Build Roidz (debug)"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "type": "process",
+      "command": "Roidzd",
+      "windows": {
+        "command": "Roidzd.exe"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/bin/"
+      }
+    },
+    {
+      "label": "Run Roidz (release)",
+      "dependsOn": [
+        "Build Roidz (release)"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "type": "process",
+      "command": "Roidz",
+      "windows": {
+        "command": "Roidz.exe"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/bin/"
+      }
+    },
+    {
+      "label": "Run Roidz (profile)",
+      "dependsOn": [
+        "Build Roidz (profile)"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "type": "process",
+      "command": "Roidzp",
+      "windows": {
+        "command": "Roidzp.exe"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/bin/"
+      }
+    }
+  ]
+}
