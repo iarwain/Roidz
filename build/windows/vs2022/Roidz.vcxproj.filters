@@ -2,25 +2,25 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="src">
-      <UniqueIdentifier>{6D0A3120-0D63-7445-84C6-AE031F9E3042}</UniqueIdentifier>
+      <UniqueIdentifier>{61F3A1A4-75F9-0A49-9099-6999E26A82FA}</UniqueIdentifier>
     </Filter>
     <Filter Include="include">
-      <UniqueIdentifier>{B077C4B3-0798-B64A-8D6E-690044B8C7A9}</UniqueIdentifier>
+      <UniqueIdentifier>{C89B4E77-EE50-2948-93D2-BF1FEFAB6085}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\lz4">
-      <UniqueIdentifier>{2F700047-A826-A040-89F2-D57D8BF7603E}</UniqueIdentifier>
+      <UniqueIdentifier>{9775EDBD-7589-3D41-A512-5951AEB34B36}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\Scroll">
-      <UniqueIdentifier>{AD4A4D0E-EC06-E148-8B4B-DB1B417585F6}</UniqueIdentifier>
+      <UniqueIdentifier>{B0DAA185-31C1-074A-B991-5ABCAC5AB1AC}</UniqueIdentifier>
     </Filter>
     <Filter Include="bundle">
-      <UniqueIdentifier>{F8FB6945-E37E-D149-B286-A4E444E2BFDB}</UniqueIdentifier>
+      <UniqueIdentifier>{AD6C5588-365F-AF41-8F18-96E49EAA686E}</UniqueIdentifier>
     </Filter>
     <Filter Include="build">
-      <UniqueIdentifier>{83D4A245-6166-1C45-9B81-6DFEC0BAB5E9}</UniqueIdentifier>
+      <UniqueIdentifier>{20CF37DA-4E92-AD44-8201-AB7B4548A79D}</UniqueIdentifier>
     </Filter>
     <Filter Include="config">
-      <UniqueIdentifier>{061BF826-8B04-984D-91DC-FC73FF5306B1}</UniqueIdentifier>
+      <UniqueIdentifier>{FE495587-29F6-1C4C-8B79-728272D254A5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,10 +30,19 @@
     <None Include="..\..\premake4.lua">
       <Filter>build</Filter>
     </None>
+    <None Include="..\..\..\data\config\asteroids.ini">
+      <Filter>config</Filter>
+    </None>
     <None Include="..\..\..\data\config\CreationTemplate.ini">
       <Filter>config</Filter>
     </None>
+    <None Include="..\..\..\data\config\dev.ini">
+      <Filter>config</Filter>
+    </None>
     <None Include="..\..\..\data\config\ExtensionTemplate.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\game.ini">
       <Filter>config</Filter>
     </None>
     <None Include="..\..\..\data\config\Roidz.ini">
@@ -46,6 +55,12 @@
       <Filter>config</Filter>
     </None>
     <None Include="..\..\..\data\config\SettingsTemplate.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\ships.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\weapons.ini">
       <Filter>config</Filter>
     </None>
   </ItemGroup>

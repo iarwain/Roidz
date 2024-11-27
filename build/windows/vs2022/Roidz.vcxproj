@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F7659C04-B6BF-EE43-9C3B-DE2469D26600}</ProjectGuid>
+    <ProjectGuid>{D07637F2-8324-CD49-89A3-4006082E33E8}</ProjectGuid>
     <RootNamespace>Roidz</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -506,12 +506,17 @@
   <ItemGroup>
     <None Include="..\..\..\include\orxBundleData.inc" />
     <None Include="..\..\premake4.lua" />
+    <None Include="..\..\..\data\config\asteroids.ini" />
     <None Include="..\..\..\data\config\CreationTemplate.ini" />
+    <None Include="..\..\..\data\config\dev.ini" />
     <None Include="..\..\..\data\config\ExtensionTemplate.ini" />
+    <None Include="..\..\..\data\config\game.ini" />
     <None Include="..\..\..\data\config\Roidz.ini" />
     <None Include="..\..\..\data\config\Roidzd.ini" />
     <None Include="..\..\..\data\config\Roidzp.ini" />
     <None Include="..\..\..\data\config\SettingsTemplate.ini" />
+    <None Include="..\..\..\data\config\ships.ini" />
+    <None Include="..\..\..\data\config\weapons.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
