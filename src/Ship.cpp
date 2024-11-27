@@ -23,7 +23,7 @@ void Ship::Update(const orxCLOCK_INFO &_rstInfo)
 
   orxVECTOR speed;
   GetSpeed(speed, orxTRUE);
-  speed.fY -= _rstInfo.fDT * orxConfig_GetFloat("Thrust") * orxInput_GetValue("Thrust");
+  speed.fX += _rstInfo.fDT * orxConfig_GetFloat("Thrust") * orxInput_GetValue("Thrust");
   SetSpeed(speed, orxTRUE);
 
   if(auto weapon = FindChild("Weapon"))
