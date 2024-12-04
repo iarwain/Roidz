@@ -261,7 +261,7 @@ project "Roidz"
 
     includedirs
     {
-        "../include/Scroll",
+        "../include/extensions",
         "../include"
     }
 

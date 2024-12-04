@@ -6,7 +6,7 @@
 #ifndef __Roidz_H__
 #define __Roidz_H__
 
-#include "Scroll.h"
+#include "Scroll/Scroll.h"
 
 /** Game Class
  */
