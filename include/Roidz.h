@@ -28,7 +28,6 @@ private:
 
 
 private:
-                ScrollObject   *scene;
 };
 
 #endif // __Roidz_H__

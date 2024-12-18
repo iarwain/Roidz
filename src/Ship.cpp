@@ -19,16 +19,25 @@ void Ship::Update(const orxCLOCK_INFO &_rstInfo)
 
   PushConfigSection();
 
+  // Rotate
   SetAngularVelocity(orxMATH_KF_DEG_TO_RAD * orxConfig_GetFloat("TurnSpeed") * (orxInput_GetValue("RotateCW") - orxInput_GetValue("RotateCCW")));
 
+  // Thrust
   orxVECTOR speed;
   GetSpeed(speed, orxTRUE);
   speed.fX += _rstInfo.fDT * orxConfig_GetFloat("Thrust") * orxInput_GetValue("Thrust");
   SetSpeed(speed, orxTRUE);
 
-  if(auto weapon = FindChild("Weapon"))
+  // Shoot
+  if(auto weapon = FindChild("@Weapon"))
   {
     weapon->Enable(orxInput_IsActive("Shoot"));
+  }
+
+  // Thruster
+  if(auto thruster = FindChild("@Thruster"))
+  {
+    thruster->Enable(orxInput_IsActive("Thrust"));
   }
 
   PopConfigSection();

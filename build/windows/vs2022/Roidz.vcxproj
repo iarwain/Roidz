@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DDE947D3-9087-024E-A32F-B9191471A1E9}</ProjectGuid>
+    <ProjectGuid>{E6F64E3C-AEDD-AD42-B25F-75425EF24465}</ProjectGuid>
     <RootNamespace>Roidz</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -489,6 +489,8 @@
     <ClInclude Include="..\..\..\include\Ship.h" />
     <ClInclude Include="..\..\..\include\extensions\orxBundle.h" />
     <ClInclude Include="..\..\..\include\extensions\orxExtensions.h" />
+    <ClInclude Include="..\..\..\include\extensions\orxMod.h" />
+    <ClInclude Include="..\..\..\include\extensions\ibxm\ibxm.h" />
     <ClInclude Include="..\..\..\include\extensions\lz4\lz4.h" />
     <ClInclude Include="..\..\..\include\extensions\lz4\lz4hc.h" />
     <ClInclude Include="..\..\..\include\extensions\Scroll\Scroll.h" />
@@ -507,8 +509,10 @@
     <None Include="..\..\..\include\orxBundleData.inc" />
     <None Include="..\..\premake4.lua" />
     <None Include="..\..\..\data\config\asteroids.ini" />
+    <None Include="..\..\..\data\config\audio.ini" />
     <None Include="..\..\..\data\config\CreationTemplate.ini" />
     <None Include="..\..\..\data\config\dev.ini" />
+    <None Include="..\..\..\data\config\explosions.ini" />
     <None Include="..\..\..\data\config\ExtensionTemplate.ini" />
     <None Include="..\..\..\data\config\game.ini" />
     <None Include="..\..\..\data\config\Roidz.ini" />
@@ -516,6 +520,7 @@
     <None Include="..\..\..\data\config\Roidzp.ini" />
     <None Include="..\..\..\data\config\SettingsTemplate.ini" />
     <None Include="..\..\..\data\config\ships.ini" />
+    <None Include="..\..\..\data\config\ui.ini" />
     <None Include="..\..\..\data\config\weapons.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

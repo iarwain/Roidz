@@ -30,10 +30,16 @@ void Roidz::Update(const orxCLOCK_INFO &_rstClockInfo)
     orxEvent_SendShort(orxEVENT_TYPE_SYSTEM, orxSYSTEM_EVENT_CLOSE);
   }
 
+  // Reset?
   if(orxInput_HasBeenActivated("Reset"))
   {
-    DeleteObject(scene);
-    scene = CreateObject("Scene");
+    DeleteObject(GetObject(orxConfig_GetU64("Scene")));
+  }
+
+  // Pause?
+  if(orxInput_HasBeenActivated("Pause"))
+  {
+    PauseGame(!IsGamePaused());
   }
 }
 
@@ -41,13 +47,15 @@ void Roidz::Update(const orxCLOCK_INFO &_rstClockInfo)
  */
 orxSTATUS Roidz::Init()
 {
+  orxConfig_Load(orxFile_GetApplicationSaveDirectory("Roidz/HiScore.sav"));
+
   orxConfig_PushSection("Game");
   
   // Init extensions
   InitExtensions();
 
   // Create the scene
-  scene = CreateObject("Scene");
+  CreateObject("Scene");
 
   // Is processing a new bundle?
   if(orxBundle_IsProcessing())
@@ -73,10 +81,17 @@ orxSTATUS Roidz::Run()
   return orxSTATUS_SUCCESS;
 }
 
+orxBOOL orxFASTCALL SaveFilter(const orxSTRING _zSectionName, const orxSTRING _zKeyName, const orxSTRING _zFileName, orxBOOL _bUseEncryption)
+{
+  return orxString_Compare(_zSectionName, "Save") == 0 ? orxTRUE : orxFALSE;
+}
+
 /** Exit function, it is called before exiting from orx
  */
 void Roidz::Exit()
 {
+  orxConfig_Save(orxFile_GetApplicationSaveDirectory("Roidz/HiScore.sav"), orxTRUE, SaveFilter);
+
   // Exit from extensions
   ExitExtensions();
 
