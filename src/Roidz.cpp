@@ -47,24 +47,17 @@ void Roidz::Update(const orxCLOCK_INFO &_rstClockInfo)
  */
 orxSTATUS Roidz::Init()
 {
-  orxConfig_Load(orxFile_GetApplicationSaveDirectory("Roidz/HiScore.sav"));
-
-  orxConfig_PushSection("Game");
-  
   // Init extensions
   InitExtensions();
 
   // Create the scene
   CreateObject("Scene");
 
-  // Is processing a new bundle?
-  if(orxBundle_IsProcessing())
-  {
-    // Done!
-    return orxSTATUS_SUCCESS;
-  }
+  // Push [Game] as the default section
+  orxConfig_PushSection("Game");
 
-  for(orxS32 i = 0; i < orxConfig_GetListCount("ViewportList"); i++)
+  // Create the viewports
+  for(orxS32 i = 0, iCount = orxConfig_GetListCount("ViewportList"); i < iCount; i++)
   {
     orxViewport_CreateFromConfig(orxConfig_GetListString("ViewportList", i));
   }
@@ -81,17 +74,10 @@ orxSTATUS Roidz::Run()
   return orxSTATUS_SUCCESS;
 }
 
-orxBOOL orxFASTCALL SaveFilter(const orxSTRING _zSectionName, const orxSTRING _zKeyName, const orxSTRING _zFileName, orxBOOL _bUseEncryption)
-{
-  return orxString_Compare(_zSectionName, "Save") == 0 ? orxTRUE : orxFALSE;
-}
-
 /** Exit function, it is called before exiting from orx
  */
 void Roidz::Exit()
 {
-  orxConfig_Save(orxFile_GetApplicationSaveDirectory("Roidz/HiScore.sav"), orxTRUE, SaveFilter);
-
   // Exit from extensions
   ExitExtensions();
 

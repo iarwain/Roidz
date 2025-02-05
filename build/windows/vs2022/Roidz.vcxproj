@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E6F64E3C-AEDD-AD42-B25F-75425EF24465}</ProjectGuid>
+    <ProjectGuid>{40C0E7A8-4377-9D42-9130-92FE9C01C83B}</ProjectGuid>
     <RootNamespace>Roidz</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -519,6 +519,7 @@
     <None Include="..\..\..\data\config\Roidzd.ini" />
     <None Include="..\..\..\data\config\Roidzp.ini" />
     <None Include="..\..\..\data\config\SettingsTemplate.ini" />
+    <None Include="..\..\..\data\config\shaders.ini" />
     <None Include="..\..\..\data\config\ships.ini" />
     <None Include="..\..\..\data\config\ui.ini" />
     <None Include="..\..\..\data\config\weapons.ini" />

@@ -2,31 +2,31 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="src">
-      <UniqueIdentifier>{B9A189FE-9AFF-0843-B49D-A7303696E846}</UniqueIdentifier>
+      <UniqueIdentifier>{50C45F3F-1CC1-4049-AF84-694F7DB35365}</UniqueIdentifier>
     </Filter>
     <Filter Include="include">
-      <UniqueIdentifier>{B72EF673-D70B-9C49-9A51-870F6F47B3BE}</UniqueIdentifier>
+      <UniqueIdentifier>{43AD0A07-0A8C-2C41-BB0F-EDF280146F16}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\extensions">
-      <UniqueIdentifier>{184327D4-16BE-E44F-8FC8-A3610308DBBD}</UniqueIdentifier>
+      <UniqueIdentifier>{4EF500FB-71EB-104F-B38F-4017C7AF68EC}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\extensions\ibxm">
-      <UniqueIdentifier>{E0BD6E92-F63E-C84C-AC32-F7882FA0B3FD}</UniqueIdentifier>
+      <UniqueIdentifier>{EACC4FEA-CADE-2B47-B55F-D54E348A7CB7}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\extensions\lz4">
-      <UniqueIdentifier>{DFDB4436-8755-0344-8BDA-403330995F8B}</UniqueIdentifier>
+      <UniqueIdentifier>{095EB090-B282-744F-A4BA-6151EDB39052}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\extensions\Scroll">
-      <UniqueIdentifier>{DEAF38C2-9D7C-5546-968E-ACB7C18CE650}</UniqueIdentifier>
+      <UniqueIdentifier>{99C4EBA6-B4D3-2248-9ACF-9A31FEAF6848}</UniqueIdentifier>
     </Filter>
     <Filter Include="bundle">
-      <UniqueIdentifier>{F196B861-29B8-1C43-990C-841875C680A3}</UniqueIdentifier>
+      <UniqueIdentifier>{9E34D03C-26BA-C646-8AAB-B199036F1AC6}</UniqueIdentifier>
     </Filter>
     <Filter Include="build">
-      <UniqueIdentifier>{67CE7128-8EA4-084F-B2B5-A9415B89D6A5}</UniqueIdentifier>
+      <UniqueIdentifier>{390CE672-7BCB-4840-86C9-D958401A04F5}</UniqueIdentifier>
     </Filter>
     <Filter Include="config">
-      <UniqueIdentifier>{7CAE8C05-4769-3941-91BF-72EB96A0B46D}</UniqueIdentifier>
+      <UniqueIdentifier>{59980E22-64F0-D54F-809F-B3919A0BB45A}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +67,9 @@
       <Filter>config</Filter>
     </None>
     <None Include="..\..\..\data\config\SettingsTemplate.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="..\..\..\data\config\shaders.ini">
       <Filter>config</Filter>
     </None>
     <None Include="..\..\..\data\config\ships.ini">
