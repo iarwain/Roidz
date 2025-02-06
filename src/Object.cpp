@@ -15,26 +15,26 @@ void Object::OnDelete()
 
 void Object::Update(const orxCLOCK_INFO &_rstInfo)
 {
-  auto width = orxConfig_GetFloat("AreaWidth");
-  auto height = orxConfig_GetFloat("AreaHeight");
+  orxVECTOR arena;
+  orxConfig_GetVector("ArenaSize", &arena);
   
   orxVECTOR pos;
   GetPosition(pos);
-  if(pos.fX < -0.5 * width)
+  if(pos.fX < -0.5 * arena.fX)
   {
-    pos.fX += width;
+    pos.fX += arena.fX;
   }
-  else if(pos.fX > 0.5 * width)
+  else if(pos.fX > 0.5 * arena.fX)
   {
-    pos.fX -= width;
+    pos.fX -= arena.fX;
   }
-  if(pos.fY < -0.5 * height)
+  if(pos.fY < -0.5 * arena.fY)
   {
-    pos.fY += height;
+    pos.fY += arena.fY;
   }
-  else if(pos.fY > 0.5 * height)
+  else if(pos.fY > 0.5 * arena.fY)
   {
-    pos.fY -= height;
+    pos.fY -= arena.fY;
   }
   SetPosition(pos);
 }
