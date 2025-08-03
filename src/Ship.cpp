@@ -25,7 +25,7 @@ void Ship::Update(const orxCLOCK_INFO &_rstInfo)
   // Thrust
   orxVECTOR speed;
   GetSpeed(speed, orxTRUE);
-  speed.fX += _rstInfo.fDT * orxConfig_GetFloat("Thrust") * orxInput_GetValue("Thrust");
+  speed.fX += _rstInfo.fDT * orxConfig_GetFloat("Acceleration") * orxInput_GetValue("Thrust");
   SetSpeed(speed, orxTRUE);
 
   // Shoot
