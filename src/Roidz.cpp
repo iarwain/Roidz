@@ -30,12 +30,6 @@ void Roidz::Update(const orxCLOCK_INFO &_rstClockInfo)
     orxEvent_SendShort(orxEVENT_TYPE_SYSTEM, orxSYSTEM_EVENT_CLOSE);
   }
 
-  // Reset?
-  if(orxInput_HasBeenActivated("Reset"))
-  {
-    DeleteObject(GetObject(orxConfig_GetU64("Scene")));
-  }
-
   // Pause?
   if(orxInput_HasBeenActivated("Pause"))
   {

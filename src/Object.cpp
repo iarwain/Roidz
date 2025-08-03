@@ -17,7 +17,7 @@ void Object::Update(const orxCLOCK_INFO &_rstInfo)
 {
   orxVECTOR arena;
   orxConfig_GetVector("ArenaSize", &arena);
-  
+
   orxVECTOR pos;
   GetPosition(pos);
   if(pos.fX < -0.5 * arena.fX)
