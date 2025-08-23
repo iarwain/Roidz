@@ -15,9 +15,10 @@ void Ship::OnDelete()
 
 void Ship::Update(const orxCLOCK_INFO &_rstInfo)
 {
-  Object::Update(_rstInfo);
-
   PushConfigSection();
+
+  // Update base object
+  Object::Update(_rstInfo);
 
   // Rotate
   SetAngularVelocity(orxMATH_KF_DEG_TO_RAD * orxConfig_GetFloat("TurnSpeed") * (orxInput_GetValue("RotateCW") - orxInput_GetValue("RotateCCW")));
